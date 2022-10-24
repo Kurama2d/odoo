@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_model" model="ir.ui.view">
+        <field name="name">wizard.model.view.form</field>
+        <field name="model">wizard.model</field>
+        <field name="arch" type="xml">
+            <form string="Create and Add Client">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button
+                        string="Create and Add"
+                        type="object"
+                        name="create_and_add_client"
+                    />
+                    <button
+                        string="Create and Edit"
+                        type="object"
+                        name="create_and_edit_client"
+                    />
+                    <button
+                        string="Cancel" special="cancel"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

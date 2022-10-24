@@ -1,0 +1,22 @@
+version: '3.1'
+services:
+  web:
+    image: odoo:16.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - /Users/Viktoriia/Documents/odoo/extra-addons:/mnt/extra-addons
+    environment: 
+      -  HOST=db
+      -  PORT=5432
+      -  USER=odoo
+      -  PASSWORD=odoo
+    command: odoo -u all -d test --dev all
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
